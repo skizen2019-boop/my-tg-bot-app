@@ -2,35 +2,61 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Mini App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>GTA 5 RP Mini App</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            text-align: center; 
-            background-color: #242424; 
-            color: white; 
-            padding-top: 50px;
+        /* Основной фон как в твоем коде из Figma */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Черный фон снаружи */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
         }
-        button { 
-            padding: 15px 25px; 
-            font-size: 18px; 
-            background-color: #0088cc; 
-            color: white; 
-            border: none; 
-            border-radius: 10px; 
-        }
-    </style>
-</head>
-<body>
-    <h1>Моё приложение в Telegram</h1>
-    <p>Это окно открыто через GitHub Pages!</p>
-    <button onclick="tg.close()">Закрыть приложение</button>
 
-    <script>
-        let tg = window.Telegram.WebApp;
-        tg.expand(); // Развернуть на максимум
-    </script>
-</body>
-</html>
+        /* Контейнер приложения */
+        .app-container {
+            width: 360px;
+            height: 100vh; /* Растягиваем на весь экран телефона */
+            background: #292929;
+            border: 1px black solid;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Главный баннер */
+        .banner {
+            width: 281px;
+            height: 158px;
+            margin-top: 20px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        /* Заголовок GTA 5 RP */
+        .title {
+            color: white;
+            font-size: 18px;
+            /* Если шрифт Tilt Warp не подгружен, будет стандартный */
+            font-family: 'Tilt Warp', sans-serif; 
+            font-weight: 400;
+            line-height: 21.60px;
+            word-wrap: break-word;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Маленькая иконка/лого */
+        .small-icon {
+            width: 51px;
+            height: 52px;
+            margin-top: 10px;
+            border-radius: 8px;

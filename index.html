@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            background-color: #242424; 
+            color: white; 
+            padding-top: 50px;
+        }
+        button { 
+            padding: 15px 25px; 
+            font-size: 18px; 
+            background-color: #0088cc; 
+            color: white; 
+            border: none; 
+            border-radius: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Моё приложение в Telegram</h1>
+    <p>Это окно открыто через GitHub Pages!</p>
+    <button onclick="tg.close()">Закрыть приложение</button>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // Развернуть на максимум
+    </script>
+</body>
+</html>

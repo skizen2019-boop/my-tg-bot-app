@@ -3,60 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>GTA 5 RP Mini App</title>
+    <title>GTA 5 RP</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    
     <style>
-        /* Основной фон как в твоем коде из Figma */
         body {
             margin: 0;
             padding: 0;
-            background-color: #000; /* Черный фон снаружи */
+            background-color: #000; /* Внешний фон */
+            color: white;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            height: 100vh;
             font-family: 'Segoe UI', sans-serif;
         }
 
-        /* Контейнер приложения */
+        /* Твой блок из Figma */
         .app-container {
             width: 360px;
-            height: 100vh; /* Растягиваем на весь экран телефона */
-            background: #292929;
-            border: 1px black solid;
+            min-height: 100vh; /* Растягиваем на весь экран */
+            background: #292929; /* Твой цвет из Figma */
+            border: 1px #000000 solid;
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
-            overflow: hidden;
+            padding-top: 20px;
+            box-sizing: border-box;
         }
 
-        /* Главный баннер */
+        /* Твоя большая картинка */
         .banner {
             width: 281px;
             height: 158px;
-            margin-top: 20px;
-            border-radius: 10px;
+            background: #444; /* Серый фон, пока картинка грузится */
+            border-radius: 8px;
             object-fit: cover;
         }
 
-        /* Заголовок GTA 5 RP */
+        /* Твой заголовок */
         .title {
             color: white;
             font-size: 18px;
-            /* Если шрифт Tilt Warp не подгружен, будет стандартный */
-            font-family: 'Tilt Warp', sans-serif; 
+            font-family: 'Tilt Warp', cursive; /* Применяем нужный шрифт */
             font-weight: 400;
             line-height: 21.60px;
-            word-wrap: break-word;
-            margin-top: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-top: 20px;
+            text-align: center;
         }
 
-        /* Маленькая иконка/лого */
-        .small-icon {
+        /* Твоя маленькая иконка */
+        .icon-small {
             width: 51px;
             height: 52px;
-            margin-top: 10px;
-            border-radius: 8px;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+
+        /* Кнопка для проверки работы в ТГ */
+        .test-btn {
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: #f57c00;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <img class="banner" src="https://placehold.co/281x158/orange/white?text=GTA+BANNER" alt="Banner">
+
+        <div class="title">GTA 5 RP</div>
+
+        <img class="icon-small" src="https://placehold.co/51x52/white/black?text=5" alt="Icon">
+
+        <button class="test-btn" onclick="tg.showAlert('Все работает!')">Проверить</button>
+    </div>
+
+    <script>
+        // Инициализация Telegram
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // Развернуть на весь экран
+        
+        // Сообщаем Telegram, что приложение готово к показу
+        tg.ready();
+    </script>
+</body>
+</html>
